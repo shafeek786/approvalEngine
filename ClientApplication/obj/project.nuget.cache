@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Kk11XLRrqvM=",
+  "dgSpecHash": "DkSeZqDWXYE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Remith-Datamate\\Github\\approvalEngine\\ClientApplication\\ClientApplication.csproj",
+  "projectFilePath": "C:\\Users\\mashk\\OneDrive\\Documents\\Job\\Project\\approvalEngine\\ClientApplication\\ClientApplication.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Remith-Datamate\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
-    "C:\\Users\\Remith-Datamate\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+    "C:\\Users\\mashk\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "C:\\Users\\mashk\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
   ],
   "logs": []
 }

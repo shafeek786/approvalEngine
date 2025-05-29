@@ -1,0 +1,73 @@
+﻿/ApprovalEngine.sln
+
+## Ignore build results
+bin/
+obj/
+
+## Ignore Rider project files
+.idea/
+
+## User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## OS generated files
+.DS_Store
+Thumbs.db
+
+## VS Code settings
+.vscode/
+
+## ASP.NET related
+project.lock.json
+project.fragment.lock.json
+
+## Auto-generated files
+*.log
+*.tlog
+*.cache
+*.pdb
+*.mdb
+
+## NuGet Packages
+*.nupkg
+# The packages folder can be ignored if you're using PackageReference
+packages/
+# If using a global packages folder
+.nuget/
+
+## Dotnet CLI
+*.vspscc
+*.vssscc
+*.dbmdl
+*.jfm
+
+## Visual Studio for Mac
+*.pidb
+*.userprefs
+
+## Resharper
+_ReSharper*/
+*.DotSettings.user
+
+## Backup & temp files
+*~ 
+*.tmp
+*.bak
+*.old
+
+## Publish output
+publish/
+out/
+
+## Logs
+*.log
+
+## Other configuration files
+appsettings.Development.json
+secrets.json
+
+## Local test results
+TestResults/

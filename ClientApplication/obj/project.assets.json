@@ -165,23 +165,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Remith-Datamate\\.nuget\\packages\\": {},
+    "C:\\Users\\mashk\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Remith-Datamate\\Github\\approvalEngine\\ClientApplication\\ClientApplication.csproj",
+      "projectUniqueName": "C:\\Users\\mashk\\OneDrive\\Documents\\Job\\Project\\approvalEngine\\ClientApplication\\ClientApplication.csproj",
       "projectName": "ClientApplication",
-      "projectPath": "C:\\Users\\Remith-Datamate\\Github\\approvalEngine\\ClientApplication\\ClientApplication.csproj",
-      "packagesPath": "C:\\Users\\Remith-Datamate\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Remith-Datamate\\Github\\approvalEngine\\ClientApplication\\obj\\",
+      "projectPath": "C:\\Users\\mashk\\OneDrive\\Documents\\Job\\Project\\approvalEngine\\ClientApplication\\ClientApplication.csproj",
+      "packagesPath": "C:\\Users\\mashk\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mashk\\OneDrive\\Documents\\Job\\Project\\approvalEngine\\ClientApplication\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Remith-Datamate\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mashk\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -196,14 +196,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Remith-Datamate\\Github\\approvalEngine\\ApprovalEngine.Application\\ApprovalEngine.Application.csproj": {
-              "projectPath": "C:\\Users\\Remith-Datamate\\Github\\approvalEngine\\ApprovalEngine.Application\\ApprovalEngine.Application.csproj"
+            "C:\\Users\\mashk\\OneDrive\\Documents\\Job\\Project\\approvalEngine\\ApprovalEngine.Application\\ApprovalEngine.Application.csproj": {
+              "projectPath": "C:\\Users\\mashk\\OneDrive\\Documents\\Job\\Project\\approvalEngine\\ApprovalEngine.Application\\ApprovalEngine.Application.csproj"
             },
-            "C:\\Users\\Remith-Datamate\\Github\\approvalEngine\\ApprovalEngine.Domain\\ApprovalEngine.Domain.csproj": {
-              "projectPath": "C:\\Users\\Remith-Datamate\\Github\\approvalEngine\\ApprovalEngine.Domain\\ApprovalEngine.Domain.csproj"
+            "C:\\Users\\mashk\\OneDrive\\Documents\\Job\\Project\\approvalEngine\\ApprovalEngine.Domain\\ApprovalEngine.Domain.csproj": {
+              "projectPath": "C:\\Users\\mashk\\OneDrive\\Documents\\Job\\Project\\approvalEngine\\ApprovalEngine.Domain\\ApprovalEngine.Domain.csproj"
             },
-            "C:\\Users\\Remith-Datamate\\Github\\approvalEngine\\ApprovalEngine.RuleSet\\ApprovalEngine.RuleSet.csproj": {
-              "projectPath": "C:\\Users\\Remith-Datamate\\Github\\approvalEngine\\ApprovalEngine.RuleSet\\ApprovalEngine.RuleSet.csproj"
+            "C:\\Users\\mashk\\OneDrive\\Documents\\Job\\Project\\approvalEngine\\ApprovalEngine.RuleSet\\ApprovalEngine.RuleSet.csproj": {
+              "projectPath": "C:\\Users\\mashk\\OneDrive\\Documents\\Job\\Project\\approvalEngine\\ApprovalEngine.RuleSet\\ApprovalEngine.RuleSet.csproj"
             }
           }
         }
