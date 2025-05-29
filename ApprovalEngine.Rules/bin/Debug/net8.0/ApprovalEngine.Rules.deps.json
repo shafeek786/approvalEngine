@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "ApprovalEngine.Rules/1.0.0": {
+        "dependencies": {
+          "ApprovalEngine.Domain": "1.0.0"
+        },
+        "runtime": {
+          "ApprovalEngine.Rules.dll": {}
+        }
+      },
+      "ApprovalEngine.Domain/1.0.0": {
+        "runtime": {
+          "ApprovalEngine.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ApprovalEngine.Rules/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ApprovalEngine.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

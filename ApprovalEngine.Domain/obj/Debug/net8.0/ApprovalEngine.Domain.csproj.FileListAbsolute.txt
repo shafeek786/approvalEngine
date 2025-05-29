@@ -1,0 +1,11 @@
+C:\Users\shafe\Desktop\ApprovalEngine\ApprovalEngine.Domain\bin\Debug\net8.0\ApprovalEngine.Domain.deps.json
+C:\Users\shafe\Desktop\ApprovalEngine\ApprovalEngine.Domain\bin\Debug\net8.0\ApprovalEngine.Domain.dll
+C:\Users\shafe\Desktop\ApprovalEngine\ApprovalEngine.Domain\bin\Debug\net8.0\ApprovalEngine.Domain.pdb
+C:\Users\shafe\Desktop\ApprovalEngine\ApprovalEngine.Domain\obj\Debug\net8.0\ApprovalEngine.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shafe\Desktop\ApprovalEngine\ApprovalEngine.Domain\obj\Debug\net8.0\ApprovalEngine.Domain.AssemblyInfoInputs.cache
+C:\Users\shafe\Desktop\ApprovalEngine\ApprovalEngine.Domain\obj\Debug\net8.0\ApprovalEngine.Domain.AssemblyInfo.cs
+C:\Users\shafe\Desktop\ApprovalEngine\ApprovalEngine.Domain\obj\Debug\net8.0\ApprovalEngine.Domain.csproj.CoreCompileInputs.cache
+C:\Users\shafe\Desktop\ApprovalEngine\ApprovalEngine.Domain\obj\Debug\net8.0\ApprovalEngine.Domain.dll
+C:\Users\shafe\Desktop\ApprovalEngine\ApprovalEngine.Domain\obj\Debug\net8.0\refint\ApprovalEngine.Domain.dll
+C:\Users\shafe\Desktop\ApprovalEngine\ApprovalEngine.Domain\obj\Debug\net8.0\ApprovalEngine.Domain.pdb
+C:\Users\shafe\Desktop\ApprovalEngine\ApprovalEngine.Domain\obj\Debug\net8.0\ref\ApprovalEngine.Domain.dll
