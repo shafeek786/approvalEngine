@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\shafe\\Desktop\\ApprovalEngine\\ApprovalEngine.Application\\ApprovalEngine.Application.csproj": {}
+    "C:\\Users\\Remith-Datamate\\Github\\approvalEngine\\ApprovalEngine.Application\\ApprovalEngine.Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\shafe\\Desktop\\ApprovalEngine\\ApprovalEngine.Application\\ApprovalEngine.Application.csproj": {
+    "C:\\Users\\Remith-Datamate\\Github\\approvalEngine\\ApprovalEngine.Application\\ApprovalEngine.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shafe\\Desktop\\ApprovalEngine\\ApprovalEngine.Application\\ApprovalEngine.Application.csproj",
+        "projectUniqueName": "C:\\Users\\Remith-Datamate\\Github\\approvalEngine\\ApprovalEngine.Application\\ApprovalEngine.Application.csproj",
         "projectName": "ApprovalEngine.Application",
-        "projectPath": "C:\\Users\\shafe\\Desktop\\ApprovalEngine\\ApprovalEngine.Application\\ApprovalEngine.Application.csproj",
-        "packagesPath": "C:\\Users\\shafe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shafe\\Desktop\\ApprovalEngine\\ApprovalEngine.Application\\obj\\",
+        "projectPath": "C:\\Users\\Remith-Datamate\\Github\\approvalEngine\\ApprovalEngine.Application\\ApprovalEngine.Application.csproj",
+        "packagesPath": "C:\\Users\\Remith-Datamate\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Remith-Datamate\\Github\\approvalEngine\\ApprovalEngine.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\shafe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Remith-Datamate\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,8 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\shafe\\Desktop\\ApprovalEngine\\ApprovalEngine.Domain\\ApprovalEngine.Domain.csproj": {
-                "projectPath": "C:\\Users\\shafe\\Desktop\\ApprovalEngine\\ApprovalEngine.Domain\\ApprovalEngine.Domain.csproj"
+              "C:\\Users\\Remith-Datamate\\Github\\approvalEngine\\ApprovalEngine.Domain\\ApprovalEngine.Domain.csproj": {
+                "projectPath": "C:\\Users\\Remith-Datamate\\Github\\approvalEngine\\ApprovalEngine.Domain\\ApprovalEngine.Domain.csproj"
               }
             }
           }
@@ -73,20 +73,20 @@
         }
       }
     },
-    "C:\\Users\\shafe\\Desktop\\ApprovalEngine\\ApprovalEngine.Domain\\ApprovalEngine.Domain.csproj": {
+    "C:\\Users\\Remith-Datamate\\Github\\approvalEngine\\ApprovalEngine.Domain\\ApprovalEngine.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shafe\\Desktop\\ApprovalEngine\\ApprovalEngine.Domain\\ApprovalEngine.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Remith-Datamate\\Github\\approvalEngine\\ApprovalEngine.Domain\\ApprovalEngine.Domain.csproj",
         "projectName": "ApprovalEngine.Domain",
-        "projectPath": "C:\\Users\\shafe\\Desktop\\ApprovalEngine\\ApprovalEngine.Domain\\ApprovalEngine.Domain.csproj",
-        "packagesPath": "C:\\Users\\shafe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shafe\\Desktop\\ApprovalEngine\\ApprovalEngine.Domain\\obj\\",
+        "projectPath": "C:\\Users\\Remith-Datamate\\Github\\approvalEngine\\ApprovalEngine.Domain\\ApprovalEngine.Domain.csproj",
+        "packagesPath": "C:\\Users\\Remith-Datamate\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Remith-Datamate\\Github\\approvalEngine\\ApprovalEngine.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\shafe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Remith-Datamate\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

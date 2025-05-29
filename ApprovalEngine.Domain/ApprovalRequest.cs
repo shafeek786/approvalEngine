@@ -10,13 +10,13 @@ namespace ApprovalEngine.Domain
         public string ItemCategory { get; private set; }
         public string RequestPayloadJson { get; private set; }
         public ApprovalStatus CurrentStatus { get; private set; }
-        public UserId? AssignedToUser { get; private set; }
-        public UserId RequestedBy { get; private set; }
+        public RoleId? AssignedToUser { get; private set; }
+        public RoleId RequestedBy { get; private set; }
 
         private readonly List<ApprovalEvent> _history = new List<ApprovalEvent>();
         public IReadOnlyList<ApprovalEvent> History => _history.AsReadOnly();
 
-        public ApprovalRequest(string itemCategory, string requestPayloadJson, UserId requestedBy)
+        public ApprovalRequest(string itemCategory, string requestPayloadJson, RoleId requestedBy)
         {
             Id = Guid.NewGuid();
             ItemCategory = itemCategory ?? throw new ArgumentNullException(nameof(itemCategory));
@@ -25,7 +25,7 @@ namespace ApprovalEngine.Domain
             CurrentStatus = ApprovalStatus.Pending;
         }
 
-        public void SetInitialAssignment(UserId assignedTo, UserId actor)
+        public void SetInitialAssignment(RoleId assignedTo, RoleId actor)
         {
             if (CurrentStatus != ApprovalStatus.Pending)
                 throw new InvalidOperationException("Initial assignment can only be set for pending requests.");
@@ -35,7 +35,7 @@ namespace ApprovalEngine.Domain
             CurrentStatus = ApprovalStatus.Pending;
         }
 
-        public void Approve(UserId approver, string? comments = null)
+        public void Approve(RoleId approver, string? comments = null)
         {
             if (CurrentStatus != ApprovalStatus.Pending && CurrentStatus != ApprovalStatus.Reassigned)
                 throw new InvalidOperationException($"Cannot approve request in '{CurrentStatus}' status.");
@@ -48,7 +48,7 @@ namespace ApprovalEngine.Domain
             AssignedToUser = null;
         }
 
-        public void Reject(UserId rejecter, string reason, string? comments = null)
+        public void Reject(RoleId rejecter, string reason, string? comments = null)
         {
             if (CurrentStatus != ApprovalStatus.Pending && CurrentStatus != ApprovalStatus.Reassigned)
                 throw new InvalidOperationException($"Cannot reject request in '{CurrentStatus}' status.");
@@ -64,7 +64,7 @@ namespace ApprovalEngine.Domain
             AssignedToUser = null;
         }
 
-        public void Reassign(UserId reassigner, UserId newAssignedTo, string reason, string? comments = null)
+        public void Reassign(RoleId reassigner, RoleId newAssignedTo, string reason, string? comments = null)
         {
             if (CurrentStatus != ApprovalStatus.Pending && CurrentStatus != ApprovalStatus.Reassigned)
                 throw new InvalidOperationException($"Cannot reassign request in '{CurrentStatus}' status.");
@@ -78,9 +78,9 @@ namespace ApprovalEngine.Domain
             CurrentStatus = ApprovalStatus.Reassigned;
         }
 
-        public bool IsAssignedTo(UserId user)
+        public bool IsAssignedTo(RoleId role)
         {
-            return AssignedToUser != null && AssignedToUser.Equals(user);
+            return AssignedToUser != null && AssignedToUser.Equals(role);
         }
     }
 }

@@ -6,6 +6,6 @@
     public interface IReassignmentRuleEngineBase
     {
         IEnumerable<string> GetSupportedItemCategories();
-        UserId? DetermineReassignment(string itemCategory, object payload, UserId currentApprover, UserId proposedNewAssignedTo);
+        RoleId? DetermineReassignment(string itemCategory, object payload, RoleId currentApprover, RoleId proposedNewAssignedTo);
     }
 }

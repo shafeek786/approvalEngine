@@ -19,13 +19,13 @@ namespace ApprovalEngine.Application
             _reassignmentRuleEngines = reassignmentRuleEngines ?? throw new ArgumentNullException(nameof(reassignmentRuleEngines));
         }
 
-        public ApprovalRequest SubmitRequest(string itemCategory, string requestPayloadJson, UserId requestedBy)
+        public ApprovalRequest SubmitRequest(string itemCategory, string requestPayloadJson, RoleId requestedBy)
         {
             var request = new ApprovalRequest(itemCategory, requestPayloadJson, requestedBy);
 
             var genericPayload = new GenericApprovalPayload(itemCategory, requestPayloadJson);
 
-            UserId? assignedTo = null;
+            RoleId? assignedTo = null;
             foreach (var engine in _initialAssignmentRuleEngines.Where(e => e.GetSupportedItemCategories().Contains(itemCategory)))
             {
                 assignedTo = engine.DetermineInitialAssignment(genericPayload);
@@ -44,18 +44,18 @@ namespace ApprovalEngine.Application
             return request;
         }
 
-        public void ApproveRequest(ApprovalRequest request, UserId approver, string? comments = null)
+        public void ApproveRequest(ApprovalRequest request, RoleId approver, string? comments = null)
         {
             request.Approve(approver, comments);
         }
 
-        public void RejectRequest(ApprovalRequest request, UserId rejecter, string reason, string? comments = null)
+        public void RejectRequest(ApprovalRequest request, RoleId rejecter, string reason, string? comments = null)
         {
             request.Reject(rejecter, reason, comments);
         }
 
         // --- IMPORTANT: This method's signature includes newAssignedTo ---
-        public void ReassignRequest(ApprovalRequest request, UserId reassigner, UserId newAssignedTo, string reason, string? comments = null)
+        public void ReassignRequest(ApprovalRequest request, RoleId reassigner, RoleId newAssignedTo, string reason, string? comments = null)
         {
             if (request.AssignedToUser == null)
             {
@@ -64,7 +64,7 @@ namespace ApprovalEngine.Application
 
             var genericPayload = new GenericApprovalPayload(request.ItemCategory, request.RequestPayloadJson);
 
-            UserId? validatedNewAssignedTo = null;
+            RoleId? validatedNewAssignedTo = null;
             foreach (var engine in _reassignmentRuleEngines.Where(e => e.GetSupportedItemCategories().Contains(request.ItemCategory)))
             {
                 // --- IMPORTANT: Pass the newAssignedTo to the rule engine's method ---

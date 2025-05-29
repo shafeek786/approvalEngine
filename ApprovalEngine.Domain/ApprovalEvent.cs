@@ -6,13 +6,13 @@ namespace ApprovalEngine.Domain
     {
         public DateTime Timestamp { get; }
         public ApprovalActionType Action { get; }
-        public UserId Actor { get; }
-        public UserId? FromApprover { get; }
-        public UserId? ToApprover { get; }
+        public RoleId Actor { get; }
+        public RoleId? FromApprover { get; }
+        public RoleId? ToApprover { get; }
         public string? Reason { get; }
         public string? Comments { get; }
 
-        public ApprovalEvent(ApprovalActionType action, UserId actor, UserId? fromApprover = null, UserId? toApprover = null, string? reason = null, string? comments = null)
+        public ApprovalEvent(ApprovalActionType action, RoleId actor, RoleId? fromApprover = null, RoleId? toApprover = null, string? reason = null, string? comments = null)
         {
             Timestamp = DateTime.UtcNow;
             Action = action;

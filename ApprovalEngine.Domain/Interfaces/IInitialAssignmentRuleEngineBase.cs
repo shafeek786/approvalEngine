@@ -6,6 +6,6 @@
     public interface IInitialAssignmentRuleEngineBase
     {
         IEnumerable<string> GetSupportedItemCategories();
-        UserId? DetermineInitialAssignment(string itemCategory, object payload);
+        RoleId? DetermineInitialAssignment(string itemCategory, object payload);
     }
 }

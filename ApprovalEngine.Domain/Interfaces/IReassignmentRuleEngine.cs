@@ -7,6 +7,6 @@ namespace ApprovalEngine.Domain.Interfaces
         IEnumerable<string> GetSupportedItemCategories();
 
         // THIS IS THE MODIFIED SIGNATURE
-        UserId? DetermineReassignment(GenericApprovalPayload genericPayload, UserId currentApprover, UserId proposedNewAssignedTo);
+        RoleId? DetermineReassignment(GenericApprovalPayload genericPayload, RoleId currentApprover, RoleId proposedNewAssignedTo);
     }
 }

@@ -5,11 +5,11 @@ VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalEngine.Domain", "ApprovalEngine.Domain\ApprovalEngine.Domain.csproj", "{8C2622A1-124D-44FF-AA17-8C80A6A83B45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalEngine.Rules", "ApprovalEngine.Rules\ApprovalEngine.Rules.csproj", "{3C5AEFA1-3C93-452C-BFC2-CC546856E452}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalEngine.RuleSet", "ApprovalEngine.RuleSet\ApprovalEngine.RuleSet.csproj", "{3C5AEFA1-3C93-452C-BFC2-CC546856E452}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalEngine.Application", "ApprovalEngine.Application\ApprovalEngine.Application.csproj", "{7B367652-E646-47B3-8DFC-44D2EA12F16E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalEngine.ConsoleApp", "ApprovalEngine.ConsoleApp\ApprovalEngine.ConsoleApp.csproj", "{270EF8CD-8D8C-4CDC-8283-BDE57808D823}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientApplication", "ClientApplication\ClientApplication.csproj", "{270EF8CD-8D8C-4CDC-8283-BDE57808D823}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
