@@ -10,18 +10,9 @@ namespace ClientApplication
 {
     internal class Program
     {
-        private static Dictionary<string, RoleId> AllUsers = new()
-        {
-            { "approver1", new RoleId("approver1") },
-            { "approver2", new RoleId("approver2") },
-            { "approver3", new RoleId("approver3") },
-            { "approver4", new RoleId("approver4") },
-            { "approver5", new RoleId("approver5") },
-            { "SeniorAdminApprover", new RoleId("SeniorAdminApprover") },
-            { "ProjectManager", new RoleId("ProjectManager") },
-            { "HRCoordinator", new RoleId("HRCoordinator") },
-            { "LegalCounsel", new RoleId("LegalCounsel") }
-        };
+        private static Dictionary<string, RoleId> AllUsers = Enum.GetNames(typeof(RoleNames))
+            .ToDictionary(name => name, name => new RoleId(name));
+
 
         private const string UniversalCategory = "UniversalApprovalRequest";
         private static ApprovalWorkflowService? _approvalService;
