@@ -10,8 +10,11 @@ namespace ClientApplication
 {
     internal class Program
     {
-        private static Dictionary<string, RoleId> AllUsers = Enum.GetNames(typeof(RoleNames))
-            .ToDictionary(name => name, name => new RoleId(name));
+        private static Dictionary<string, RoleId> AllUsers = typeof(Roles)
+            .GetFields(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static)
+            .Where(f => f.FieldType == typeof(RoleId))
+            .ToDictionary(f => f.GetValue(null)!.ToString()!, f => (RoleId)f.GetValue(null)!);
+
 
 
         private const string UniversalCategory = "UniversalApprovalRequest";

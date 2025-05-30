@@ -18,16 +18,4 @@
         Cancel
     }
     
-    public enum RoleNames
-    {
-        approver1,
-        approver2,
-        approver3,
-        approver4,
-        approver5,
-        SeniorAdminApprover,
-        ProjectManager,
-        HRCoordinator,
-        LegalCounsel
-    }
 }
