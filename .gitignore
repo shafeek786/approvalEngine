@@ -74,6 +74,7 @@ TestResults/
 
 **/bin/
 **/obj/
-ApprovalEngine.Application\bin\
-ApprovalEngine.Application\obj\
-ApprovalEngine.Domain\bin\
+ApprovalEngine.Application/bin/
+ApprovalEngine.Application/obj/
+ApprovalEngine.Domain/bin/
+ApprovalEngine.RuleSet/obj/
