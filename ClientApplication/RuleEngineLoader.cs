@@ -1,10 +1,10 @@
-﻿using ApprovalEngine.Domain.Interfaces; // For IInitialAssignmentRuleEngine and IReassignmentRuleEngine
+﻿using ApprovalEngine.Domain.Interfaces; // For IInitialAssignmentRuleEngine, IReassignmentRuleEngine, and IApprovalSequenceRuleEngine
 using ApprovalEngine.Application;       // For ApprovalWorkflowService
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Linq;
-using System.Reflection; // New: For reflection capabilities
-using System.IO;         // New: For path manipulation
+using System.Reflection;
+using System.IO;
 
 namespace ClientApplication
 {
@@ -17,58 +17,62 @@ namespace ClientApplication
             // Register the ApprovalWorkflowService itself
             services.AddTransient<ApprovalWorkflowService>();
 
-            // --- NEW: Dynamic Loading of Rule Engines from Assembly ---
-            string rulesAssemblyName = "ApprovalEngine.RuleSet.dll";
-            string baseDirectory = AppContext.BaseDirectory; 
+            string rulesAssemblyName = "ApprovalEngine.RuleSet.dll"; // Ensure this matches your RuleSet project's output DLL name
+            string baseDirectory = AppContext.BaseDirectory;
             string rulesAssemblyPath = Path.Combine(baseDirectory, rulesAssemblyName);
 
             Console.WriteLine($"Attempting to load rules from: {rulesAssemblyPath}");
 
             if (!File.Exists(rulesAssemblyPath))
             {
-                Console.WriteLine($"Error: Rules assembly '{rulesAssemblyPath}' not found.");
-                // As a fallback or error handling: consider registering default rules here if the DLL is optional.
-                // For this example, we'll proceed, but it might fail if the DLL isn't there.
-                // In a real app, you might throw or log and exit.
+                Console.WriteLine($"CRITICAL ERROR: Rules assembly '{rulesAssemblyName}' not found at '{rulesAssemblyPath}'. Please ensure it's copied to the output directory.");
+                // In a real app, you might throw an exception or have a fallback mechanism.
+                // For this example, we'll build an empty provider if the DLL is missing,
+                // which will likely cause issues later if services are expected.
+                return services.BuildServiceProvider();
             }
 
             try
             {
-                // Load the assembly dynamically
                 Assembly rulesAssembly = Assembly.LoadFrom(rulesAssemblyPath);
                 Console.WriteLine($"Successfully loaded assembly: {rulesAssembly.FullName}");
 
-                // Find and register IInitialAssignmentRuleEngine implementations
-                foreach (var type in rulesAssembly.GetTypes())
+                var ruleEngineTypes = rulesAssembly.GetTypes()
+                    .Where(t => !t.IsInterface && !t.IsAbstract)
+                    .ToList();
+
+                // Register IInitialAssignmentRuleEngine implementations
+                foreach (var type in ruleEngineTypes.Where(t => typeof(IInitialAssignmentRuleEngine).IsAssignableFrom(t)))
                 {
-                    if (typeof(IInitialAssignmentRuleEngine).IsAssignableFrom(type) && !type.IsInterface && !type.IsAbstract)
-                    {
-                        services.AddTransient(typeof(IInitialAssignmentRuleEngine), type);
-                        Console.WriteLine($"Registered Initial Assignment Rule Engine: {type.FullName}");
-                    }
+                    services.AddTransient(typeof(IInitialAssignmentRuleEngine), type);
+                    Console.WriteLine($"Registered Initial Assignment Rule Engine: {type.FullName}");
                 }
 
-                // Find and register IReassignmentRuleEngine implementations
-                foreach (var type in rulesAssembly.GetTypes())
+                // Register IReassignmentRuleEngine implementations
+                foreach (var type in ruleEngineTypes.Where(t => typeof(IReassignmentRuleEngine).IsAssignableFrom(t)))
                 {
-                    if (typeof(IReassignmentRuleEngine).IsAssignableFrom(type) && !type.IsInterface && !type.IsAbstract)
-                    {
-                        services.AddTransient(typeof(IReassignmentRuleEngine), type);
-                        Console.WriteLine($"Registered Reassignment Rule Engine: {type.FullName}");
-                    }
+                    services.AddTransient(typeof(IReassignmentRuleEngine), type);
+                    Console.WriteLine($"Registered Reassignment Rule Engine: {type.FullName}");
+                }
+
+                // Register IApprovalSequenceRuleEngine implementations
+                foreach (var type in ruleEngineTypes.Where(t => typeof(IApprovalSequenceRuleEngine).IsAssignableFrom(t)))
+                {
+                    services.AddTransient(typeof(IApprovalSequenceRuleEngine), type);
+                    Console.WriteLine($"Registered Approval Sequence Rule Engine: {type.FullName}");
                 }
             }
             catch (FileNotFoundException fnfEx)
             {
-                Console.WriteLine($"CRITICAL ERROR: Rules assembly '{rulesAssemblyName}' not found at '{rulesAssemblyPath}'. Please ensure it's copied to the output directory. Exception: {fnfEx.Message}");
+                Console.WriteLine($"CRITICAL ERROR: Rules assembly '{rulesAssemblyName}' could not be loaded (FileNotFound). Ensure it's in the output directory. Path: '{rulesAssemblyPath}'. Exception: {fnfEx.Message}");
             }
             catch (BadImageFormatException bifEx)
             {
-                Console.WriteLine($"CRITICAL ERROR: Rules assembly '{rulesAssemblyName}' is not a valid .NET assembly. Exception: {bifEx.Message}");
+                Console.WriteLine($"CRITICAL ERROR: Rules assembly '{rulesAssemblyName}' is not a valid .NET assembly. Path: '{rulesAssemblyPath}'. Exception: {bifEx.Message}");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"An unexpected error occurred while loading rules assembly: {ex.Message}");
+                Console.WriteLine($"An unexpected error occurred while loading or registering rules from assembly '{rulesAssemblyPath}': {ex.ToString()}");
             }
 
             return services.BuildServiceProvider();

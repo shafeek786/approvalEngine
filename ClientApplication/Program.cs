@@ -15,8 +15,6 @@ namespace ClientApplication
             .Where(f => f.FieldType == typeof(RoleId))
             .ToDictionary(f => f.GetValue(null)!.ToString()!, f => (RoleId)f.GetValue(null)!);
 
-
-
         private const string UniversalCategory = "UniversalApprovalRequest";
         private static ApprovalWorkflowService? _approvalService;
         private static List<ApprovalRequest> _allRequests = new();
