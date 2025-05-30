@@ -121,7 +121,10 @@ namespace ClientApplication
                     for (int i = 0; i < assignedRequests.Count; i++)
                     {
                         Console.WriteLine("-----------------------------------------------------------------------------");
-                        Console.WriteLine($"{i + 1}. Request ID: {assignedRequests[i].Id}");
+                        var payload = JsonSerializer.Deserialize<Dictionary<string, string>>(assignedRequests[i].RequestPayloadJson);
+                        var title = payload != null && payload.TryGetValue("RequestName", out var name) ? name : "Untitled";
+
+                        Console.WriteLine($"{i + 1}. Request ID: {assignedRequests[i].Id}, Title: {title}");
                         
                         Console.WriteLine("-----------------------------------------------------------------------------");
                     }
