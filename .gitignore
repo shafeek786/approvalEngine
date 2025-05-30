@@ -71,3 +71,9 @@ secrets.json
 
 ## Local test results
 TestResults/
+
+**/bin/
+**/obj/
+ApprovalEngine.Application\bin\
+ApprovalEngine.Application\obj\
+ApprovalEngine.Domain\bin\

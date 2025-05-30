@@ -10,18 +10,12 @@ namespace ClientApplication
 {
     internal class Program
     {
-        private static Dictionary<string, RoleId> AllUsers = new()
-        {
-            { "approver1", new RoleId("approver1") },
-            { "approver2", new RoleId("approver2") },
-            { "approver3", new RoleId("approver3") },
-            { "approver4", new RoleId("approver4") },
-            { "approver5", new RoleId("approver5") },
-            { "SeniorAdminApprover", new RoleId("SeniorAdminApprover") },
-            { "ProjectManager", new RoleId("ProjectManager") },
-            { "HRCoordinator", new RoleId("HRCoordinator") },
-            { "LegalCounsel", new RoleId("LegalCounsel") }
-        };
+        private static Dictionary<string, RoleId> AllUsers = typeof(Roles)
+            .GetFields(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static)
+            .Where(f => f.FieldType == typeof(RoleId))
+            .ToDictionary(f => f.GetValue(null)!.ToString()!, f => (RoleId)f.GetValue(null)!);
+
+
 
         private const string UniversalCategory = "UniversalApprovalRequest";
         private static ApprovalWorkflowService? _approvalService;
