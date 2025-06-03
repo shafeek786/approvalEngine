@@ -8,15 +8,8 @@ namespace ApprovalEngine.RuleSet
 {
     public class CommonReassignmentRuleSet : IReassignmentRuleEngine
     {
-        private static readonly List<RoleId> ValidApprovers = new List<RoleId>
-        {
-            new RoleId("approver1"),
-            new RoleId("approver2"),
-            new RoleId("approver3"),
-            new RoleId("approver4"),
-            new RoleId("approver5"),
-            new RoleId("SeniorAdminApprover")
-        };
+        
+        private static readonly List<RoleId> ValidApprovers = Roles.GetDefaultApproverRoles().ToList();
 
         public IEnumerable<string> GetSupportedItemCategories()
         {

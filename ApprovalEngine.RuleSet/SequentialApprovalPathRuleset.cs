@@ -10,14 +10,8 @@ namespace ApprovalEngine.RuleSet
         private static readonly Dictionary<string, List<RoleId>> _categorySequences = new()
         {
             {
-                "UniversalApprovalRequest", new List<RoleId>
-                {
-                    new RoleId("approver1"),
-                    new RoleId("approver2"),
-                    new RoleId("approver3"),
-                    new RoleId("approver4"),
-                    new RoleId("approver5")
-                }
+                "UniversalApprovalRequest",
+                Roles.GetDefaultApproverRolesSequencialOrder().ToList()
             }
             // Add other categories and their sequences here if this rule manages them
             // e.g., { "SimpleTask", new List<RoleId> { new RoleId("approver1") } } // Single step sequence
