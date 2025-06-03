@@ -10,10 +10,19 @@ namespace ClientApplication
 {
     internal class Program
     {
-        private static Dictionary<string, RoleId> AllUsers = typeof(Roles)
+        private static Dictionary<string, RoleId> AllUsers = typeof(ApprovalEngine.Domain.Interfaces.Roles)
             .GetFields(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static)
             .Where(f => f.FieldType == typeof(RoleId))
-            .ToDictionary(f => f.GetValue(null)!.ToString()!, f => (RoleId)f.GetValue(null)!);
+            .ToDictionary(f => ((RoleId)f.GetValue(null)!).Value, f => (RoleId)f.GetValue(null)!);
+
+        private static readonly HashSet<string> defaultApprovers =
+            ApprovalEngine.Domain.Interfaces.Roles.GetDefaultApproverRoles()
+                .Select(r => r.Value)
+                .ToHashSet(StringComparer.OrdinalIgnoreCase);
+
+
+
+
 
 
 
@@ -43,7 +52,7 @@ namespace ClientApplication
 
                 var user = AllUsers[input];
 
-                if (input.StartsWith("approver", StringComparison.OrdinalIgnoreCase) || input == "SeniorAdminApprover")
+                if (defaultApprovers.Contains(user.Value))
                 {
                     ApproverMenu(user);
                 }
